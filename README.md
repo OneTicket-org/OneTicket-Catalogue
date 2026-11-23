@@ -25,3 +25,7 @@ For PowerShell, set the password for the current terminal session before running
 $env:SPRING_DATASOURCE_PASSWORD = "<value of CATALOGUE_DB_PASSWORD from OneTicket-Main/.env>"
 .\gradlew.bat bootRun
 ```
+
+## Tests
+
+`./gradlew test` needs Docker: the integration tests start a throw-away PostgreSQL with Testcontainers, so they pass without the central Compose project and on GitHub Actions (workflow `CI`, same as Payments). They do not read `SPRING_DATASOURCE_PASSWORD`.
