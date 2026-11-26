@@ -30,7 +30,7 @@ class CatalogueApplicationTests {
         @Container
         @ServiceConnection
         @JvmStatic
-        val postgres = PostgreSQLContainer("postgres:17-alpine")
+        val postgres = PostgreSQLContainer("postgres:18")
     }
 
     @Value("\${local.server.port}")
